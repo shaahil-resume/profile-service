@@ -1,6 +1,8 @@
 import express from 'express'
 import resume from '../models/resume.model.js'
 import { client } from '../config/redis.config.js'
+import {uploadResumePdf,getResumePdfUrl} from '../services/resumePdf.service.js'
+import multer from 'multer';
 
 const router = express.Router();
 
@@ -24,6 +26,7 @@ router.get('/', async (req, res) => {
             profileData = await resume.findOne({});
             await client.setEx(`resume:shaahil`,3600,JSON.stringify(profileData));
         }else{
+            console.log('loading from redis');
             profileData = JSON.parse(profileData)
         }
         return res.json(profileData);
@@ -96,6 +99,34 @@ router.post('/skills', async (req, res) => {
     } catch (err) {
         console.error(err)
         res.status(500).json({ message: 'Internal server error' })
+    }
+})
+
+const upload = multer({ storage: multer.memoryStorage() });
+
+router.post('/resume-pdf', upload.single('file'),
+    async (req, res) => {
+    try{
+        if (!req.file) return res.status(400).json({ message: 'No file uploaded' })
+        const updated = await uploadResumePdf(req.file.buffer,req.file.originalname)
+        return res.status(201).json(updated);
+    }catch(err){
+        console.error(err)
+        res.status(500).json({ message: 'Internal server error' })
+    }
+});
+
+router.get('/getResumePdf', async (req, res) => {
+    try{
+        console.log('getResumePdf')
+        const url = await getResumePdfUrl();
+        return res.json(url);
+    }catch(err){
+        console.error(err);
+        if (err.message === 'Unable to get resume pdf') {
+            return res.status(404).json({ message: 'No resume uploaded yet' });
+        }
+        return res.status(500).json({ message: 'Internal server error' });
     }
 })
 

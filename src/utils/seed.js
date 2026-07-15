@@ -29,6 +29,10 @@ const seedResume = async () => {
             experience: [
                 {
                     company: 'Alight Solutions',
+                    project:"Core Benefits Administration (CBA) is an enterprise SaaS platform providing manager self-\n" +
+                        "service tools and reporting capabilities to help organisations administer and manage employee benefits\n" +
+                        "programmes",
+                    image: 'alight.png',
                     role: 'IT Software Engineer',
                     location: 'Noida India',
                     from: 'Sep 2025',
@@ -40,10 +44,13 @@ const seedResume = async () => {
                         'Delivered backend enhancements using Spring Boot microservices and REST APIs, driving\n' +
                         'continuous platform improvement across the CBA system'
                     ],
-                    tech: ['Java', 'Spring Boot', 'Microservices', 'REST APIs', 'Oracle SQL', 'Jenkins']
+                    tech: ['Java', 'Spring Boot', 'Microservices', 'REST APIs', 'Oracle SQL', 'Jenkins'],
+                    contributions: ['Production ownership', 'SLA compliance', 'Backlog reduction', 'Microservices']
                 },
                 {
                     company: 'Wipro',
+                    project:"Core Benefits Administration (CBA) — Enterprise SaaS · 50+ clients",
+                    image: 'wipro.png',
                     role: 'Senior Software Engineer',
                     location: 'Noida India',
                     from: 'Jul 2022',
@@ -56,10 +63,14 @@ const seedResume = async () => {
                         'Recognised with 7 organisational awards — Dazzle, Victory League, and Illuminate — for\n' +
                         'deployment ownership, backlog reduction, and delivering complex features ahead of schedule'
                     ],
-                    tech: ['Java', 'Spring Boot', 'Microservices', 'REST APIs', 'Oracle SQL', 'Jenkins', 'CI/CD']
+                    tech: ['Java', 'Spring Boot', 'Microservices', 'REST APIs', 'Oracle SQL', 'Jenkins', 'CI/CD'],
+                    contributions: ['CI/CD automation', 'SWAT leadership', 'Incident response', 'Microservices']
                 },
                 {
                     company: 'Tata Consultancy Services',
+                    project:"Enterprise Data Quality Dashboard for monitoring financial data quality, transaction validation," +
+                        " exception management, and regulatory compliance",
+                    image: 'tcs.png',
                     role: 'Engineer: Automation Tester - Full Stack Developer',
                     location: 'Gurugram India',
                     from: 'Jan 2019',
@@ -71,19 +82,20 @@ const seedResume = async () => {
                         'Developed 50+ Selenium and Core Java automation scripts, increasing test coverage by 60%\n' +
                         'and reducing manual effort by 40%'
                     ],
-                    tech: ['Java', 'Spring Boot', 'Microservices', 'REST APIs', 'Oracle SQL', 'Jenkins', 'Angular', 'TypeScript', 'Selenium']
+                    tech: ['Java', 'Spring Boot', 'Microservices', 'REST APIs', 'Oracle SQL', 'Jenkins', 'Angular', 'TypeScript', 'Selenium'],
+                    contributions: ['REST API design', 'Angular integration', 'Test automation', 'Chatbot integration']
                 }
             ],
 
             education: [
                 {
                     university: 'Sastra University',
-                    Degree : 'Master of Computer Applications',
+                    degree : 'Master of Computer Applications',
                     to: 'Jul 2021'
                 },
                 {
                     university: 'Guru Gobind Singh Indraprastha University',
-                    Degree : 'Bachelor of Computer Applications',
+                    degree : 'Bachelor of Computer Applications',
                     to: 'Apr 2018'
                 }
             ],
@@ -124,7 +136,7 @@ const seedResume = async () => {
                 { category: 'AI & ML ', items: ['Spring AI', 'RAG Pipelines', 'LLMIntegration', 'OpenAI API (GPT-4o-mini)', 'VectorEmbeddings', 'Qdrant', 'MCP Client & Server', 'PromptEngineering'] },
                 { category: 'Cloud & DevOps ', items: ['AWS (Cloud Practitioner)', 'Docker' ,
                     'Docker Compose', 'Kubernetes (K8s)', 'GitHub Actions', 'Jenkins', 'CI/CD', 'Cloud-native', 'Deployment Automation'] },
-                { category: 'Databases ', items: ['PostgreSQL', 'Oracle SQL,', 'Microsoft SQL Sever',
+                { category: 'Databases ', items: ['PostgreSQL', 'Oracle SQL,', 'Microsoft SQL Server',
                         'Hibernate/JPA'] },
                 { category: 'Observability & Testing ', items: ['Prometheus', 'Grafana', 'Jaeger',
                         'Spring Boot Actuator', 'JUnit', 'Selenium','Spring AI Evaluators'] },

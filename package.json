@@ -7,17 +7,20 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
-    "seed" : "node src/utils/seed.js",
+    "seed": "node src/utils/seed.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "license": "MIT",
   "type": "module",
   "dependencies": {
-    "@aws-sdk/client-s3": "^3.1068.0",
+    "@aws-sdk/client-s3": "^3.1075.0",
+    "@aws-sdk/s3-request-presigner": "^3.1075.0",
+    "cors": "^2.8.6",
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
     "mongoose": "^9.7.0",
+    "multer": "^2.2.0",
     "redis": "^6.0.0",
     "zod": "^4.4.3"
   },

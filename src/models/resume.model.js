@@ -5,6 +5,8 @@ const experienceSchema = new Schema({
         type: String,
         required: true
     },
+    project: String,
+    image: String,
     role: {
         type: String,
         required: true
@@ -13,7 +15,8 @@ const experienceSchema = new Schema({
     from: String,
     to: String,
     bullets: [String],
-tech: [String]
+    tech: [String],
+    contributions: [String]
 });
 
 const educationSchema = new Schema({
@@ -21,7 +24,7 @@ const educationSchema = new Schema({
         type: String,
         required: true
     },
-    Degree: {
+    degree: {
         type: String,
         required: true
     },
@@ -66,10 +69,10 @@ const resumeSchema = new Schema({
     phone: String,
     github: String,
     linkedin: String,
-    Summary : String,
+    summary : String,
     experience : [experienceSchema],
     education : [educationSchema],
-    certification : [certificationSchema],
+    certifications : [certificationSchema],
     projects : [projectSchema],
     skills : [skillsSchema]
 }, { timestamps: true })

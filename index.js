@@ -3,6 +3,7 @@ import dotenv from 'dotenv'
 import connectMongoDB from "./src/config/mongodb.config.js";
 import { connectRedis } from './src/config/redis.config.js'
 import profileRoutes from './src/routes/profile.routes.js'
+import cors from 'cors'
 
 dotenv.config()
 
@@ -10,6 +11,11 @@ const app = express()
 const PORT = process.env.PORT || 3002
 
 app.use(express.json())
+
+app.use(cors({
+    origin: 'http://localhost:3000',
+    credentials: true
+}))
 
 // Health check endpoint
 app.get('/health', (req, res) => {
